@@ -5,9 +5,6 @@ import com.cmentech.entity.ResponseEntity;
 import com.cmentech.utils.*;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -150,13 +147,15 @@ public class TestSend {
 		url = baseUrl + RouterUtil.device_lock_operation_remove_password;
 	}
 
-
-
-
-
-
-
-
+	/**
+	 * 分页查询
+	 */
+	public static void findByPage() {
+		params.clear();
+		params.put("pageNum",1);
+		params.put("pageSize",2);
+		url = "http://localhost:8081/user/find";
+	}
 
 
 	public static void main(String[] args) throws IOException {
@@ -171,7 +170,9 @@ public class TestSend {
 //		deviceLockOperationUnlock();
 //		deviceLockOperationSavePassword();
 //		deviceLockOperationFreezePassword();
-		deviceLockOperationRemovePassword();
+//		deviceLockOperationRemovePassword();
+		findByPage();
+
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
@@ -180,41 +181,5 @@ public class TestSend {
 		}
 //		System.out.println(AESUtil.getPwdByResult(result));
 		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
-
-
-
-//		/**
-//		 * 该测试样例以接口对接文档中“注册回调为例”，
-//		 * 该接口详情参考api对接文档
-//		 */
-//		Map<String, Object> params = new HashMap<String, Object>();
-////		params.put("callbackUrl", "http://testrd.cmentech.com:8080");
-//		params.put("gatewaySN", "CXAA18AAA0101465");
-////		params.put("estateId", "FJDASFSAFDJKSFK");
-////		params.put("floorId", "DJFSAKFFJDSA");
-////		params.put("roomId", "DJALJFKDDFSIA");
-////		params.put("houseId", "FJDASFSAFDJKSFK");
-//		params.put("lockId", "deb4f9c8801a47bf8916a4b94aecec46");
-//		params.put("passwordType", "CODE");
-////		params.put("password", AESUtil.encryption("456789","17d57f573741414baa6310204faca89c"));
-//		params.put("index", "1001");
-//		params.put("enable", false);
-////		params.put("startTime", "2019-05-27 00:00:00");
-////		params.put("endTime", "2019-06-27 00:00:00");
-//
-//
-//		String url = HttpConstant.getBaseUrl() + "/device/lock/operation/freeze_password";
-//
-//		String result = null;
-//		try {
-//			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//
-//		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
-
-
-
 	}
 }
