@@ -92,7 +92,7 @@ public class TestSend {
 	}
 
 	/**
-	 * 8.获取动态离线密码
+	 * 8.获取动态离线密码(有效时间：1小时)
 	 */
 	public static void deviceLockDynamicPassword() {
 		params.clear();
@@ -116,7 +116,7 @@ public class TestSend {
 	public static void deviceLockOperationSavePassword() {
 		params.clear();
 		params.put("lockId", DeanUtil.lockId);//锁ID
-		params.put("password", AESUtil.encryption("742198",DeanUtil.SID));//自定义密码
+		params.put("password", AESUtil.encryption("102316",DeanUtil.SID));//自定义密码
 		params.put("index", DeanUtil.index);//密码编号
 		params.put("startTime", DateUtil.getToday());//密码生效时间
 		params.put("endTime", DateUtil.getNextMonth());//密码失效时间
@@ -131,8 +131,8 @@ public class TestSend {
 		params.put("lockId", DeanUtil.lockId);//锁ID
 		params.put("passwordType", DeanUtil.CODE);//密码类型
 		params.put("index", DeanUtil.index);//密码编号
-//		params.put("enable", DeanUtil.frozen);//冻结密码
-		params.put("enable", DeanUtil.unfreeze);//解冻密码
+		params.put("enable", DeanUtil.frozen);//冻结密码
+//		params.put("enable", DeanUtil.unfreeze);//解冻密码
 		url = baseUrl + RouterUtil.device_lock_operation_freeze_password;
 	}
 
@@ -154,7 +154,16 @@ public class TestSend {
 		params.clear();
 		params.put("pageNum",1);
 		params.put("pageSize",2);
-		url = "http://localhost:8081/user/find";
+		url = "http://localhost:8081/user/findByPage";
+	}
+
+	/**
+	 * 单条查询
+	 */
+	public static void findById() {
+		params.clear();
+		params.put("id",5);
+		url = "http://localhost:8081/user/findById";
 	}
 
 
@@ -166,20 +175,21 @@ public class TestSend {
 //		inquireLock();
 //		inquireLockPasswords();
 //		inquireLockAdminPassword();
-//		deviceLockDynamicPassword();
+		deviceLockDynamicPassword();
 //		deviceLockOperationUnlock();
 //		deviceLockOperationSavePassword();
 //		deviceLockOperationFreezePassword();
 //		deviceLockOperationRemovePassword();
-		findByPage();
-
+//		findByPage();
+//		findById();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		System.out.println(AESUtil.getPwdByResult(result));
+		System.out.println(AESUtil.getPwdByResult(result));
+//		System.out.println(result);
 		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
 	}
 }
