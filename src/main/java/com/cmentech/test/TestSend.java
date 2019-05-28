@@ -166,6 +166,32 @@ public class TestSend {
 		url = "http://localhost:8081/user/findById";
 	}
 
+	/**
+	 * 登录
+	 */
+	public static void wechatLogin() {
+		params.clear();
+		params.put("code", DeanUtil.code);
+		url = "http://localhost:8081/login";
+	}
+
+	/**
+	 * 设置登录态
+	 */
+	public static void setSession() {
+		params.clear();
+		params.put("openid", DeanUtil.openid);
+		params.put("session_key", DeanUtil.session_key);
+		url = "http://localhost:8081/setSession";
+	}
+
+	public static void findEstates() {
+		params.clear();
+		params.put("pageNum",1);
+		params.put("pageSize",10);
+		url = "http://localhost:8081/house/findEstates";
+	}
+
 
 	public static void main(String[] args) throws IOException {
 //		houseSync();
@@ -182,6 +208,9 @@ public class TestSend {
 //		deviceLockOperationRemovePassword();
 //		findByPage();
 //		findById();
+//		wechatLogin();
+//		setSession();
+//		findEstates();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
@@ -189,7 +218,7 @@ public class TestSend {
 			e.printStackTrace();
 		}
 		System.out.println(AESUtil.getPwdByResult(result));
-//		System.out.println(result);
+		System.out.println(result);
 		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
 	}
 }

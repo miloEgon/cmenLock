@@ -3,6 +3,7 @@ package com.cmentech.test;
 import com.cmentech.utils.CommonUtil;
 import com.cmentech.utils.DeanUtil;
 import com.cmentech.utils.HttpUtil;
+import com.cmentech.utils.JSONUtil;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
@@ -72,10 +73,12 @@ public class TestWechat {
     }
 
     public static void main(String[] args) {
-        Map<Object, Object> map = getOpenId(DeanUtil.code);
+//        Map<Object, Object> map = getOpenId(DeanUtil.code);
 //        System.out.println(map.get("openid")+"--"+map.get("session_key"));
-        logger.info(map.get("status")+"--"+map.get("msg"));
+//        logger.info(map.get("status")+"--"+map.get("msg"));
     }
+
+
 
 
 }
