@@ -54,6 +54,7 @@ public class HttpUtil {
 			conn.setDoInput(true);
 			conn.setUseCaches(false);
 			conn.setRequestProperty("Content-Type", "application/json");
+			conn.setRequestProperty("rd_session", "8c89e5c312e38c9f5b286fb8313f7dbd");//小程序
 			
 			//api请求头认证信息
 			conn.setRequestProperty("SID", sid);

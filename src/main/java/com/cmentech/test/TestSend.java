@@ -147,6 +147,15 @@ public class TestSend {
 		url = baseUrl + RouterUtil.device_lock_operation_remove_password;
 	}
 
+	/**
+	 * 分页查询
+	 */
+	public static void findByPage() {
+		params.clear();
+		params.put("pageNum",1);
+		params.put("pageSize",2);
+		url = "http://localhost:8081/user/find";
+	}
 
 
 	public static void main(String[] args) throws IOException {
@@ -155,13 +164,15 @@ public class TestSend {
 //		gatewayPermitJoin();
 //		inquireLocks();
 //		inquireLock();
-		inquireLockPasswords();
+//		inquireLockPasswords();
 //		inquireLockAdminPassword();
 //		deviceLockDynamicPassword();
 //		deviceLockOperationUnlock();
 //		deviceLockOperationSavePassword();
 //		deviceLockOperationFreezePassword();
 //		deviceLockOperationRemovePassword();
+		findByPage();
+
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
@@ -170,6 +181,5 @@ public class TestSend {
 		}
 //		System.out.println(AESUtil.getPwdByResult(result));
 		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
-
 	}
 }
