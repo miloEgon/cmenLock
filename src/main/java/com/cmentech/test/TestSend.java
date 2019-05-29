@@ -192,6 +192,36 @@ public class TestSend {
 		url = "http://localhost:8081/house/findEstates";
 	}
 
+	public static void findEstateById() {
+		params.clear();
+		params.put("estate_id","99868b87757aaa1c643776da20f50e07");
+
+		url = "http://localhost:8081/house/findEstateById";
+	}
+
+	public static void insertEstate() {
+		params.clear();
+		params.put("name","西溪欢乐谷一期");
+		params.put("address","五常街道联创路251号");
+
+		url = "http://localhost:8081/house/insertEstate";
+	}
+
+	public static void insertFloor() {
+		params.clear();
+		params.put("estate_id","99868b87757aaa1c643776da20f50e07");
+		params.put("name","05楼");
+
+		url = "http://localhost:8081/floor/insertFloor";
+	}
+
+	public static void insertRoom() {
+		params.clear();
+		params.put("floor_id","09849f1b00adedae57e018ea56c1c1eb");
+
+		url = "http://localhost:8081/room/countRooms";
+	}
+
 
 	public static void main(String[] args) throws IOException {
 //		houseSync();
@@ -211,6 +241,10 @@ public class TestSend {
 		wechatLogin();
 //		setSession();
 //		findEstates();
+//		insertEstate();
+//		insertFloor();
+//		findEstateById();
+		insertRoom();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
@@ -219,6 +253,6 @@ public class TestSend {
 		}
 //		System.out.println(AESUtil.getPwdByResult(result));
 		System.out.println(result);
-		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
+//		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
 	}
 }
