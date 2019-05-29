@@ -166,19 +166,19 @@ public class TestSend {
 //		inquireLocks();
 //		inquireLock();
 //		inquireLockPasswords();
-//		inquireLockAdminPassword();
+		inquireLockAdminPassword();
 //		deviceLockDynamicPassword();
 //		deviceLockOperationUnlock();
 //		deviceLockOperationSavePassword();
 //		deviceLockOperationFreezePassword();
-		deviceLockOperationRemovePassword();
+//		deviceLockOperationRemovePassword();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		System.out.println(AESUtil.getPwdByResult(result));
+		System.out.println(AESUtil.getPwdByResult(result));
 		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
 
 
