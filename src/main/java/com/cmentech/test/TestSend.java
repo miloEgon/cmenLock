@@ -201,14 +201,14 @@ public class TestSend {
 //		inquireLock();
 //		inquireLockPasswords();
 //		inquireLockAdminPassword();
-		deviceLockDynamicPassword();
+//		deviceLockDynamicPassword();
 //		deviceLockOperationUnlock();
 //		deviceLockOperationSavePassword();
 //		deviceLockOperationFreezePassword();
 //		deviceLockOperationRemovePassword();
 //		findByPage();
 //		findById();
-//		wechatLogin();
+		wechatLogin();
 //		setSession();
 //		findEstates();
 
@@ -217,7 +217,7 @@ public class TestSend {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(AESUtil.getPwdByResult(result));
+//		System.out.println(AESUtil.getPwdByResult(result));
 		System.out.println(result);
 		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
 	}
