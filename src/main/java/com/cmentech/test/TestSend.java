@@ -238,13 +238,13 @@ public class TestSend {
 //		deviceLockOperationRemovePassword();
 //		findByPage();
 //		findById();
-		wechatLogin();
+//		wechatLogin();
 //		setSession();
 //		findEstates();
 //		insertEstate();
 //		insertFloor();
-//		findEstateById();
-		insertRoom();
+		findEstateById();
+//		insertRoom();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
