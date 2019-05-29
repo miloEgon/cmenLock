@@ -36,6 +36,21 @@ public class DeanUtil {
 
     public static final Boolean unfreeze = false; //解冻密码
 
+    public static final String code = "023flg731CBPtR1Xd3831XAS631flg7Y"; //黄丽萍的code
+//    public static final String code = ""; //黄丽萍的code
+
+//    public static final String code = "011KrjG10nOygI1pFlH10vXYF10KrjGi"; //丁江的code（未用）
+
+    public static final String openid = "onTbc4oKkd1OyaW3-4U3mqaM_Z-A"; //黄丽萍的openId
+
+    public static final String session_key = "oAtVDIwjsQBlGdH8dMoriw=="; //黄丽萍的sessionKey
+
+    public static final String rd_session = "f9b37a91da8fe6d39a229205df47384c"; //黄丽萍的登录态
+
+    public static final String appId = "wxb293e104076401fc"; //小程序ID
+
+    public static final String appSecret = "47099fa82e776cc3991f9b8ce0206fe5"; //小程序密钥
+
 
 
 
