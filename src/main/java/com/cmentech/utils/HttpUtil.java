@@ -54,7 +54,6 @@ public class HttpUtil {
 			conn.setDoInput(true);
 			conn.setUseCaches(false);
 			conn.setRequestProperty("Content-Type", "application/json");
-			conn.setRequestProperty("rd_session", "8c89e5c312e38c9f5b286fb8313f7dbd");//小程序
 			
 			//api请求头认证信息
 			conn.setRequestProperty("SID", sid);
@@ -90,6 +89,7 @@ public class HttpUtil {
 		URLConnection conn = setHttpHeader(isPost, url);
 		byte[] byteData = data.getBytes(CharSetUtil.defCharSet());
 		conn.setRequestProperty("Content-length",String.valueOf(byteData));
+		conn.setRequestProperty("rd_session", "2d85fce9a64e45d99f23e4df545137ab");//自定义登录态
 		DataOutputStream out = new DataOutputStream(conn.getOutputStream());
 		out.write(byteData);
 		out.flush();

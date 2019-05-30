@@ -73,9 +73,9 @@ public class TestWechat {
     }
 
     public static void main(String[] args) {
-//        Map<Object, Object> map = getOpenId(DeanUtil.code);
-//        System.out.println(map.get("openid")+"--"+map.get("session_key"));
-//        logger.info(map.get("status")+"--"+map.get("msg"));
+        Map<Object, Object> map = getOpenId(DeanUtil.code);
+        System.out.println(map.get("openid")+"--"+map.get("session_key"));
+        logger.info(map.get("status")+"--"+map.get("msg"));
     }
 
 

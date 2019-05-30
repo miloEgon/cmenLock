@@ -2,13 +2,13 @@ package com.cmentech.utils;
 
 public class DeanUtil {
 
-    public static final String houseId = "FJDASFSAFDJKSFK"; //房源ID
+    public static final String houseId = "99868b87757aaa1c643776da20f50e07"; //房源ID
 
     public static final String houseName = "西溪北苑东区"; //房源名称
 
     public static final String houseAddress = "文一西路258号"; //房源地址
 
-    public static final String floorId = "DJFSAKFFJDSA"; //楼层ID
+    public static final String floorId = "4260e76341fde9faf75d47b270043e37"; //楼层ID
 
     public static final String floorName = "11楼"; //楼层名称
 
@@ -36,10 +36,10 @@ public class DeanUtil {
 
     public static final Boolean unfreeze = false; //解冻密码
 
-    public static final String code = "023flg731CBPtR1Xd3831XAS631flg7Y"; //黄丽萍的code
+//    public static final String code = "023flg731CBPtR1Xd3831XAS631flg7Y"; //黄丽萍的code
 //    public static final String code = ""; //黄丽萍的code
 
-//    public static final String code = "011KrjG10nOygI1pFlH10vXYF10KrjGi"; //丁江的code（未用）
+    public static final String code = "011KrjG10nOygI1pFlH10vXYF10KrjGi"; //丁江的code（未用）
 
     public static final String openid = "onTbc4oKkd1OyaW3-4U3mqaM_Z-A"; //黄丽萍的openId
 

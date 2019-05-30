@@ -185,6 +185,17 @@ public class TestSend {
 		url = "http://localhost:8081/setSession";
 	}
 
+	public static void setKey() {
+		params.clear();
+		url = "http://localhost:8081/redis/setKey";
+	}
+
+	public static void getKey() {
+		params.clear();
+//		params.put("param","2d85fce9a64e45d99f23e4df545137ab");
+		url = "http://localhost:8081/redis/getKey";
+	}
+
 	public static void main(String[] args) throws IOException {
 //		houseSync();
 //		houseBindGateway();
@@ -202,6 +213,8 @@ public class TestSend {
 //		findById();
 //		wechatLogin();
 //		setSession();
+//		setKey();
+		getKey();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
