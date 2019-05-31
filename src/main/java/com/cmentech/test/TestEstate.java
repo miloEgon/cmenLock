@@ -6,7 +6,9 @@ import com.cmentech.utils.JSONUtil;
 import com.cmentech.utils.RouterUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,7 +49,7 @@ public class TestEstate {
      **/
     public static void findEstateById() {
         params.clear();
-        params.put("estate_id","99868b87757aaa1c643776da20f50e07");
+        params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
 
         url = baseUrl+"/house/findEstateById";
     }
@@ -76,8 +78,8 @@ public class TestEstate {
      **/
     public static void insertFloor() {
         params.clear();
-        params.put("estate_id","99868b87757aaa1c643776da20f50e07");
-        params.put("name","05楼");
+        params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
+//        params.put("name","01楼");
 
         url = baseUrl+"/floor/insertFloor";
     }
@@ -91,9 +93,10 @@ public class TestEstate {
      **/
     public static void insertRoom() {
         params.clear();
-        params.put("floor_id","09849f1b00adedae57e018ea56c1c1eb");
+        params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
+//        params.put("floor_id","09849f1b00adedae57e018ea56c1c1eb");
 
-        url = baseUrl+"/room/countRooms";
+        url = baseUrl+"/floor/insertRoom";
     }
 
     /**
@@ -101,38 +104,49 @@ public class TestEstate {
      */
     public static void findRooms() {
         params.clear();
-        params.put("floor_id","034344209a08060b8b64455cc4eb9d36");
+        params.put("floor_id","d9350670c88139af74f83434b4115424");
 
         url = baseUrl+"/house/findRooms";
     }
 
-    /**
-     * 绑定网关
-     */
-    public static void bindGateway() {
+
+    public static void addGateways() {
         params.clear();
-        params.put("gatewaySN", DeanUtil.gatewaySN);//网关序列号
-        params.put("estateId", DeanUtil.houseId);//房源ID
-        url = baseUrl+"/gateway/bindGateway";
+
+        List<Map<String, Object>> maps = new ArrayList<>();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("gateway_id","CXAA18AAA0101466");
+        map1.put("gateway_name","网关A1");
+        maps.add(map1);
+        Map<String, Object> map2 = new HashMap<>();
+        map2.put("gateway_id","CXAA18AAA0101467");
+        map2.put("gateway_name","网关A2");
+        maps.add(map2);
+        Map<String, Object> map3 = new HashMap<>();
+        map3.put("gateway_id","CXAA18AAA0101468");
+//        map3.put("gateway_name","网关A3");
+        maps.add(map3);
+
+        params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
+        params.put("list",maps);
+        url = baseUrl+"/gateway/addGateway";
     }
 
-    public static void findGateways() {
-        params.clear();
-        url = baseUrl+"/gateway/findGateways";
-    }
 
 
 
     public static void main(String[] args){
 
+        addGateways();
+
 //		  findEstates();
 //        findEstateById();
+//        findRooms();
+
+
 //		  insertEstate();
 //		  insertFloor();
 //		  insertRoom();
-//        findRooms();
-//        bindGateway();
-        findGateways();
 
         try {
             result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);

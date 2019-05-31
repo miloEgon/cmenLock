@@ -148,41 +148,12 @@ public class TestSend {
 	}
 
 	/**
-	 * 分页查询
-	 */
-	public static void findByPage() {
-		params.clear();
-		params.put("pageNum",1);
-		params.put("pageSize",2);
-		url = "http://localhost:8081/user/findByPage";
-	}
-
-	/**
-	 * 单条查询
-	 */
-	public static void findById() {
-		params.clear();
-		params.put("id",5);
-		url = "http://localhost:8081/user/findById";
-	}
-
-	/**
 	 * 登录
 	 */
 	public static void wechatLogin() {
 		params.clear();
 		params.put("code", DeanUtil.code);
 		url = "http://localhost:8081/login";
-	}
-
-	/**
-	 * 设置登录态
-	 */
-	public static void setSession() {
-		params.clear();
-		params.put("openid", DeanUtil.openid);
-		params.put("session_key", DeanUtil.session_key);
-		url = "http://localhost:8081/setSession";
 	}
 
 	public static void setKey() {
@@ -214,7 +185,7 @@ public class TestSend {
 //		wechatLogin();
 //		setSession();
 //		setKey();
-		getKey();
+//		getKey();
 
 		try {
 			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);

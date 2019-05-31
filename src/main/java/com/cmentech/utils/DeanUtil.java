@@ -2,19 +2,19 @@ package com.cmentech.utils;
 
 public class DeanUtil {
 
-    public static final String houseId = "99868b87757aaa1c643776da20f50e07"; //房源ID
+    public static final String houseId = "8b8b76823b7f0583861f95edb774ddb2"; //房源ID
 
     public static final String houseName = "西溪北苑东区"; //房源名称
 
     public static final String houseAddress = "文一西路258号"; //房源地址
 
-    public static final String floorId = "4260e76341fde9faf75d47b270043e37"; //楼层ID
+    public static final String floorId = "d9350670c88139af74f83434b4115424"; //楼层ID
 
     public static final String floorName = "11楼"; //楼层名称
 
     public static final String roomName = "1101室"; //房间名称
 
-    public static final String roomId = MD5Util.encryption(roomName); //房间ID
+    public static final String roomId = "b80aac9697c4401382bae53d4a7c44e6"; //房间ID
 
     public static final String gatewaySN = "CXAA18AAA0101465"; //网关序列号
 
