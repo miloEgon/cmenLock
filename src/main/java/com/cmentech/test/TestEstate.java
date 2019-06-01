@@ -137,11 +137,11 @@ public class TestEstate {
 
     public static void main(String[] args){
 
-        addGateways();
+//        addGateways();
 
 //		  findEstates();
 //        findEstateById();
-//        findRooms();
+        findRooms();
 
 
 //		  insertEstate();
