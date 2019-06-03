@@ -107,11 +107,17 @@ public class TestEstate {
         url = baseUrl+"/house/findRooms";
     }
 
-
+    /**
+     * 手动或扫码录入网关信息
+     */
     public static void addGateways() {
         params.clear();
 
         List<Map<String, Object>> maps = new ArrayList<>();
+        Map<String, Object> map0 = new HashMap<>();
+        map0.put("gateway_id","CXAA18AAA0101465");
+        map0.put("gateway_name","网关A0");
+        maps.add(map0);
         Map<String, Object> map1 = new HashMap<>();
         map1.put("gateway_id","CXAA18AAA0101466");
         map1.put("gateway_name","网关A1");
@@ -122,7 +128,7 @@ public class TestEstate {
         maps.add(map2);
         Map<String, Object> map3 = new HashMap<>();
         map3.put("gateway_id","CXAA18AAA0101468");
-//        map3.put("gateway_name","网关A3");
+        map3.put("gateway_name","网关A3");
         maps.add(map3);
 
         params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
@@ -130,17 +136,49 @@ public class TestEstate {
         url = baseUrl+"/gateway/addGateway";
     }
 
+    public static void findGateways() {
+        params.clear();
+        params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
+        url = baseUrl+"/gateway/findGateways";
+    }
 
+    public static void getGatewayById() {
+        params.clear();
+        params.put("gatewaySN","CXAA18AAA0101465");
+        url = baseUrl+"/gateway/getGatewayById";
+    }
+
+    public static void modifyGatewayName() {
+        params.clear();
+        params.put("gateway_id","CXAA18AAA0101465");
+        params.put("gateway_name","网关A0");
+        url = baseUrl+"/gateway/modifyGatewayName";
+    }
+
+    public static void removeGateway() {
+        params.clear();
+        params.put("gatewaySN","CXAA18AAA0101465");
+        url = baseUrl+"/gateway/removeGateway";
+    }
+
+    public static void getEstateList() {
+        params.clear();
+        url = baseUrl+"/house/getEstateList";
+    }
 
 
     public static void main(String[] args){
 
 //        addGateways();
+//        findGateways();
+//        getGatewayById();
+//        modifyGatewayName();
+//        removeGateway();
 
 //		  findEstates();
-//        findEstateById();
-        findRooms();
-
+        findEstateById();
+//        getEstateList();
+//        findRooms();
 
 //		  insertEstate();
 //		  insertFloor();

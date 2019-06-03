@@ -170,7 +170,7 @@ public class TestSend {
 	public static void main(String[] args) throws IOException {
 //		houseSync();
 //		houseBindGateway();
-//		gatewayPermitJoin();
+		gatewayPermitJoin();
 //		inquireLocks();
 //		inquireLock();
 //		inquireLockPasswords();
