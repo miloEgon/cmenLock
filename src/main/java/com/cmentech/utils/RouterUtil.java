@@ -26,6 +26,8 @@ public class RouterUtil {
 
     public static final String device_lock_operation_remove_password = "/device/lock/operation/remove_password";
 
+    public static final String user_login = "/user/login";
+
 
 
 

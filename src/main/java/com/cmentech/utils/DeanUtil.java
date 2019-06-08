@@ -14,9 +14,9 @@ public class DeanUtil {
 
     public static final String roomName = "1101室"; //房间名称
 
-    public static final String roomId = "b80aac9697c4401382bae53d4a7c44e6"; //房间ID
+    public static final String roomId = "5bcaae0f08b04c709adafa2e1283b1d9"; //房间ID
 
-    public static final String gatewaySN = "CXAA18AAA0101465"; //网关序列号
+    public static final String gatewaySN = "CXAA18AAA0101471"; //网关序列号
 
     public static final String lockId = "deb4f9c8801a47bf8916a4b94aecec46"; //锁ID
 
@@ -28,7 +28,8 @@ public class DeanUtil {
 
     public static final String SERCRET = "5C35912AE1B0CE449C0539BCF9CD23D3"; //第三方认证码
 
-    public static final String Admin_Pass = "qwiTMrvMt6GK+dkfs/EcXg=="; //管理员密码
+//    public static final String Admin_Pass = "qwiTMrvMt6GK+dkfs/EcXg=="; //管理员密码
+    public static final String Admin_Pass = "2580"; //管理员密码
 
     public static final String index = "1001"; //密码编号
 
@@ -39,7 +40,7 @@ public class DeanUtil {
 //    public static final String code = "023flg731CBPtR1Xd3831XAS631flg7Y"; //黄丽萍的code
 //    public static final String code = ""; //黄丽萍的code
 
-    public static final String code = "011KrjG10nOygI1pFlH10vXYF10KrjGi"; //丁江的code（未用）
+    public static final String code = "043s1Goe2qKy8G01Fepe2bbDoe2s1Goy"; //丁江的code（未用）
 
     public static final String openid = "onTbc4oKkd1OyaW3-4U3mqaM_Z-A"; //黄丽萍的openId
 

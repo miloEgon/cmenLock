@@ -1,5 +1,6 @@
 package com.cmentech.test;
 
+import com.cmentech.utils.DeanUtil;
 import com.cmentech.utils.HttpUtil;
 import com.cmentech.utils.JSONUtil;
 
@@ -114,7 +115,7 @@ public class TestEstate {
         params.clear();
 
         List<Map<String, Object>> maps = new ArrayList<>();
-        Map<String, Object> map0 = new HashMap<>();
+        /*Map<String, Object> map0 = new HashMap<>();
         map0.put("gateway_id","CXAA18AAA0101465");
         map0.put("gateway_name","网关A0");
         maps.add(map0);
@@ -129,7 +130,13 @@ public class TestEstate {
         Map<String, Object> map3 = new HashMap<>();
         map3.put("gateway_id","CXAA18AAA0101468");
         map3.put("gateway_name","网关A3");
-        maps.add(map3);
+        maps.add(map3);*/
+
+        Map<String, Object> map2 = new HashMap<>();
+        map2.put("gateway_id", DeanUtil.gatewaySN);
+        map2.put("gateway_name","网关A4");
+        maps.add(map2);
+
 
         params.put("estate_id","8b8b76823b7f0583861f95edb774ddb2");
         params.put("list",maps);
@@ -167,16 +174,18 @@ public class TestEstate {
     }
 
 
+
+
     public static void main(String[] args){
 
-//        addGateways();
+        addGateways();
 //        findGateways();
 //        getGatewayById();
 //        modifyGatewayName();
 //        removeGateway();
 
 //		  findEstates();
-        findEstateById();
+//        findEstateById();
 //        getEstateList();
 //        findRooms();
 

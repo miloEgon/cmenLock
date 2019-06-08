@@ -89,7 +89,7 @@ public class HttpUtil {
 		URLConnection conn = setHttpHeader(isPost, url);
 		byte[] byteData = data.getBytes(CharSetUtil.defCharSet());
 		conn.setRequestProperty("Content-length",String.valueOf(byteData));
-		conn.setRequestProperty("X-Auth", "2d85fce9a64e45d99f23e4df545137ab");//自定义登录态
+		conn.setRequestProperty("X-Auth", "dd83f7d3f0304c738d6f26d4d0aab5c8");//自定义登录态
 		DataOutputStream out = new DataOutputStream(conn.getOutputStream());
 		out.write(byteData);
 		out.flush();

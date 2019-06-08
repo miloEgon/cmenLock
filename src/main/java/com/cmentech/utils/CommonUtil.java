@@ -14,10 +14,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.ConnectException;
 import java.net.URL;
+import java.util.Date;
 
 public class CommonUtil {
 
     private static Logger logger = LoggerFactory.getLogger(CommonUtil.class);
+
+    private static long nowTime = new Date().getTime();
+
+    private final static String SID = "17d57f573741414baa6310204faca89c";
 
     /**
      * 发送https请求
@@ -39,6 +44,8 @@ public class CommonUtil {
             URL url = new URL(requestUrl);
             HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
             conn.setSSLSocketFactory(ssf);
+            conn.setRequestProperty("X-Timestamp", nowTime+"");
+            conn.setRequestProperty("SID", SID);
 
             conn.setDoOutput(true);
             conn.setDoInput(true);

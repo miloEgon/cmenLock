@@ -3,6 +3,7 @@ package com.cmentech.test;
 import com.cmentech.constant.HttpConstant;
 import com.cmentech.entity.ResponseEntity;
 import com.cmentech.utils.*;
+import net.sf.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -147,15 +148,6 @@ public class TestSend {
 		url = baseUrl + RouterUtil.device_lock_operation_remove_password;
 	}
 
-	/**
-	 * 登录
-	 */
-	public static void wechatLogin() {
-		params.clear();
-		params.put("code", DeanUtil.code);
-		url = "http://localhost:8081/login";
-	}
-
 	public static void setKey() {
 		params.clear();
 		url = "http://localhost:8081/redis/setKey";
@@ -167,10 +159,32 @@ public class TestSend {
 		url = "http://localhost:8081/redis/getKey";
 	}
 
+	public static void getRoomsByGateway() {
+		params.clear();
+		params.put("gatewaySN", DeanUtil.gatewaySN);
+		url = baseUrl+"/gateway/getRoomsByGateway";
+	}
+
+	public static void getLockByRoom() {
+		params.clear();
+		params.put("room_id", "b80aac9697c4401382bae53d4a7c44e6");
+		url = baseUrl+"/gateway/getLockByRoom";
+	}
+
+	/**
+	 * 登录
+	 */
+	public static void wechatLogin() {
+		url = baseUrl + RouterUtil.user_login +"/043s1Goe2qKy8G01Fepe2bbDoe2s1Goy";
+		JSONObject jsonObject = CommonUtil.httpsRequest(url, "GET", null);
+		System.out.println(jsonObject);
+	}
+
 	public static void main(String[] args) throws IOException {
+//		getLockByRoom();
 //		houseSync();
 //		houseBindGateway();
-		gatewayPermitJoin();
+//		gatewayPermitJoin();
 //		inquireLocks();
 //		inquireLock();
 //		inquireLockPasswords();
@@ -182,18 +196,19 @@ public class TestSend {
 //		deviceLockOperationRemovePassword();
 //		findByPage();
 //		findById();
-//		wechatLogin();
+		wechatLogin();
 //		setSession();
 //		setKey();
 //		getKey();
+//		getRoomsByGateway();
 
-		try {
-			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, true);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-//		System.out.println(AESUtil.getPwdByResult(result));
-		System.out.println(result);
+//		try {
+//			result = HttpUtil.sendRequest(JSONUtil.toJSONString(params), url, false);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+////		System.out.println(AESUtil.getPwdByResult(result));
+//		System.out.println(result);
 //		System.out.println(JSONUtil.parse2Bean(result, ResponseEntity.class));
 	}
 }
