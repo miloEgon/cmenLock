@@ -1,0 +1,7 @@
+2019-05-28 11:44:10 INFO  TestWechat:46 - https://api.weixin.qq.com/sns/jscode2session?appid=wxb293e104076401fc&secret=47099fa82e776cc3991f9b8ce0206fe5&js_code=023flg731CBPtR1Xd3831XAS631flg7Y&grant_type=authorization_code
+2019-05-28 11:44:11 ERROR TestWechat:57 - 获取token失败
+2019-05-28 11:44:11 INFO  TestWechat:77 - -1--获取token失败
+2019-05-28 14:12:45 INFO  TestWechat:91 - 
+2019-05-28 14:13:31 INFO  TestWechat:91 - 
+2019-05-28 14:14:10 INFO  TestWechat:91 - 
+2019-05-28 14:14:40 INFO  TestWechat:91 - 

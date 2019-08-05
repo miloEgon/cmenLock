@@ -28,9 +28,11 @@ public class RouterUtil {
 
     public static final String user_login = "/user/login";
 
+    public static final String user_lock_getLocks = "/user/lock/getLocks";
 
+    public static final String user_lock_unlock = "/user/lock/unlock";
 
-
+    public static final String user_lock_query_result = "/user/lock/query_result";
 
 
 }

@@ -2,13 +2,13 @@ package com.cmentech.utils;
 
 public class DeanUtil {
 
-    public static final String houseId = "8b8b76823b7f0583861f95edb774ddb2"; //房源ID
+    public static final String houseId = "c4ca4238a0b923820dcc509a6f75849b"; //房源ID
 
     public static final String houseName = "西溪北苑东区"; //房源名称
 
     public static final String houseAddress = "文一西路258号"; //房源地址
 
-    public static final String floorId = "d9350670c88139af74f83434b4115424"; //楼层ID
+    public static final String floorId = "6"; //楼层ID
 
     public static final String floorName = "11楼"; //楼层名称
 
@@ -16,9 +16,9 @@ public class DeanUtil {
 
     public static final String roomId = "5bcaae0f08b04c709adafa2e1283b1d9"; //房间ID
 
-    public static final String gatewaySN = "CXAA18AAA0101471"; //网关序列号
+    public static final String gatewaySN = "CXAA18AAA0100100"; //网关序列号
 
-    public static final String lockId = "deb4f9c8801a47bf8916a4b94aecec46"; //锁ID
+    public static final String lockId = "be6b3f0ed9c7418bb95b472e35acd79e"; //锁ID
 
     public static final String TEMPCODE = "TEMPCODE"; //临时密码
 

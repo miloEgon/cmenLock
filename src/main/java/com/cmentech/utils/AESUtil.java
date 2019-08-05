@@ -95,7 +95,7 @@ public class AESUtil {
     }
 
 
-    public static String getPwdByResult(String result) {
+    /*public static String getPwdByResult(String result) {
         ResponseEntity resp = JSONUtil.parse2Bean(result, ResponseEntity.class);
         BaseEntity entity = JSONUtil.parse2Bean(String.valueOf(resp.getData()), BaseEntity.class);
         String pwd = AESUtil.decryption(entity.getPassword(), DeanUtil.SID);
@@ -106,6 +106,6 @@ public class AESUtil {
     public static void main(String[] args) {
         String result = "{\"code\":0,\"data\":{\"password\":\"qwiTMrvMt6GK+dkfs/EcXg==\",\"status\":\"已录入\"},\"message\":\"ok\"}";
         getPwdByResult(result);
-	}
+	}*/
 
 }
