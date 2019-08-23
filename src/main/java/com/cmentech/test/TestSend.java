@@ -212,7 +212,7 @@ public class TestSend {
     }
 
 	public static void main(String[] args) throws IOException {
-		callbackRegister();
+//		callbackRegister();
 //        finger();
 //		getLockByRoom();
 //		houseSync();
@@ -220,7 +220,7 @@ public class TestSend {
 //		gatewayPermitJoin();
 //		inquireLocks();
 //		inquireLock();
-//		inquireLockPasswords();
+		inquireLockPasswords();
 //		inquireLockAdminPassword();
 //		deviceLockDynamicPassword();
 //		deviceLockOperationUnlock();

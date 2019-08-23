@@ -3,7 +3,6 @@ package com.cmentech.test;
 import com.cmentech.utils.CommonUtil;
 import com.cmentech.utils.DeanUtil;
 import com.cmentech.utils.HttpUtil;
-import com.cmentech.utils.JSONUtil;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;

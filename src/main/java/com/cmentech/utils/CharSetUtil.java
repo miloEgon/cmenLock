@@ -71,7 +71,5 @@ public class CharSetUtil {
 	 * 获取默认字符编码名，默认字符编码名为UTF-8
 	 * @return ：返回UTF-8编码名
 	 */
-	public static String defCharSet() {
-		return UTF8;
-	}
+	public static String defCharSet() { return UTF8; }
 }

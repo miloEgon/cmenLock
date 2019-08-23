@@ -2,7 +2,7 @@ package com.cmentech.utils;
 
 public class DeanUtil {
 
-    public static final String houseId = "c4ca4238a0b923820dcc509a6f75849b"; //房源ID
+    public static final String houseId = "5981a55af5d24f81a318411def529d6f"; //房源ID
 
     public static final String houseName = "西溪北苑东区"; //房源名称
 

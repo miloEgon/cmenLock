@@ -6,11 +6,9 @@ import org.apache.commons.io.IOUtils;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Base64;
 import java.util.Date;
 import java.util.UUID;
 
@@ -30,25 +28,16 @@ public class HttpUtil {
 	 */
 	private static URLConnection setHttpHeader(boolean doPost, String httpUrl) {
 		
-//		String sid = HttpConstant.getSid();
+		String sid = HttpConstant.getSid();
 		
 		long nowTime = new Date().getTime();
 		
 		String nonce = UUID.randomUUID().toString();
 		
 		String sercret = HttpConstant.getSercret();
-
-		String account = "18758021222"; //周海涛
-
-		//MD5(Base64(X-Nonce+Account+X-Timestamp+sercret))
-		String sign = null;
-		try {
-			String keyStr = nonce+account+nowTime+sercret;
-			sign = MD5Util.encryption(new String(Base64.getEncoder().encode(keyStr.getBytes("utf-8"))));
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-
+		
+		String sign = MD5Util.encryption(sid + nowTime + nonce + sercret);
+		
 		URLConnection conn = null;
 		
 		try {
@@ -67,8 +56,7 @@ public class HttpUtil {
 			conn.setRequestProperty("Content-Type", "application/json");
 			
 			//api请求头认证信息
-			conn.setRequestProperty("Account", account);
-//			conn.setRequestProperty("SID", sid);
+			conn.setRequestProperty("SID", sid);
 			conn.setRequestProperty("X-Nonce", nonce);
 			conn.setRequestProperty("X-Timestamp", nowTime+"");
 			conn.setRequestProperty("X-Sign", sign);
@@ -97,19 +85,18 @@ public class HttpUtil {
 		/*if(null == data) {
 			return null;
 		}*/
-
+		
 		URLConnection conn = setHttpHeader(isPost, url);
 
 		if (isPost) {
 			byte[] byteData = data.getBytes(CharSetUtil.defCharSet());
-			conn.setRequestProperty("Content-length",String.valueOf(byteData));
-//			conn.setRequestProperty("X-Auth", "dd83f7d3f0304c738d6f26d4d0aab5c8");//自定义登录态
+			conn.setRequestProperty("Content-length", String.valueOf(byteData));
 			DataOutputStream out = new DataOutputStream(conn.getOutputStream());
 			out.write(byteData);
 			out.flush();
 			out.close();
 		}
-
+		
 		InputStream in = conn.getInputStream();
         String result = new String(IOUtils.toByteArray(in), CharSetUtil.defCharSet());
         in.close();
